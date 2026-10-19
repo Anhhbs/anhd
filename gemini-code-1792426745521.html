@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌸 Đại Tiệc Quà Tặng 20/10 - Tập Thể Lớp D18TH2 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-1: #fff0f6;
+      --pink-2: #ffd6e7;
+      --pink-main: #ff4d8d;
+      --pink-dark: #c2185b;
+      --gold: #ffb300;
+      --purple: #8e24aa;
+      --text: #4a152b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: radial-gradient(circle at top, #fff5f9 0%, #ffdde8 45%, #f8bbd0 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Night Stage Mode for Finale Video */
+    body.cinema-mode {
+      background: radial-gradient(circle at center, #3b0a26 0%, #1a0412 100%);
+      color: #fff;
+    }
+
+    /* Fireworks & Confetti Canvas */
+    #fx-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Floating Petals */
+    .petal {
+      position: fixed;
+      top: -10%;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0.9; }
+      50% { transform: translateY(50vh) rotate(180deg) translateX(35px); opacity: 0.85; }
+      100% { transform: translateY(112vh) rotate(360deg) translateX(-35px); opacity: 0.2; }
+    }
+
+    .app-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 16px 24px 60px;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Top TV Banner */
+    .tv-header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border: 3px solid #ffb3d1;
+      border-radius: 28px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 12px 32px rgba(216, 27, 96, 0.18);
+      margin-bottom: 18px;
+    }
+    body.cinema-mode .tv-header {
+      background: rgba(45, 10, 30, 0.88);
+      border-color: #ff80ab;
+      box-shadow: 0 0 35px rgba(255, 77, 141, 0.4);
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-logo {
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ff4d8d, #ff80ab);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.3rem;
+      box-shadow: 0 8px 20px rgba(255, 77, 141, 0.35);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    .brand-title h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--pink-dark);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    body.cinema-mode .brand-title h1 {
+      color: #ff9ec4;
+      text-shadow: 0 0 16px rgba(255, 128, 171, 0.7);
+    }
+    .brand-title p {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #8c3b5a;
+    }
+    body.cinema-mode .brand-title p { color: #ffc1e3; }
+
+    .header-stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .stat-pill {
+      background: #fff0f6;
+      border: 2px solid #ffadd2;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-weight: 800;
+      font-size: 0.98rem;
+      color: var(--pink-dark);
+    }
+    body.cinema-mode .stat-pill {
+      background: rgba(255,255,255,0.1);
+      color: #ffd6e7;
+      border-color: #ff80ab;
+    }
+
+    /* Navigation & TV Controls */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text);
+      border: 2px solid #ffb3d1;
+      padding: 12px 22px;
+      border-radius: 16px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-btn:hover { transform: translateY(-2px); border-color: var(--pink-main); }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #ff4d8d, #d81b60);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 8px 20px rgba(216, 27, 96, 0.35);
+    }
+
+    .tv-tools {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tool-btn {
+      background: rgba(255,255,255,0.9);
+      border: 2px solid #ffb3d1;
+      color: var(--pink-dark);
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .tool-btn:hover { background: #ffe4ef; transform: translateY(-2px); }
+
+    /* Player Control Bar */
+    .control-bar {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid #ffb3d1;
+      border-radius: 22px;
+      padding: 16px 22px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(216, 27, 96, 0.12);
+    }
+    .input-group {
+      display: flex;
+      flex: 1 1 480px;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .input-group input, .input-group select {
+      flex: 1 1 220px;
+      padding: 13px 18px;
+      border-radius: 14px;
+      border: 2px solid #ff9ec4;
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      outline: none;
+    }
+    .input-group input:focus, .input-group select:focus {
+      border-color: var(--pink-dark);
+      box-shadow: 0 0 0 4px rgba(255, 77, 141, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff4d8d, #d81b60);
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 0.98rem;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(216, 27, 96, 0.3);
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(216, 27, 96, 0.45); }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #8e24aa, #ba68c8);
+      color: white;
+      border: none;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(142, 36, 170, 0.28);
+      transition: 0.2s;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(142, 36, 170, 0.4); }
+
+    /* TAB 1: 48 BLIND BOXES GRID */
+    .box-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 14px;
+    }
+    .gift-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fff4f8 100%);
+      border: 2.5px solid #ffb3d1;
+      border-radius: 22px;
+      padding: 16px 12px;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 6px 16px rgba(216, 27, 96, 0.12);
+      user-select: none;
+      overflow: hidden;
+    }
+    .gift-card:hover:not(.opened) {
+      transform: translateY(-7px) scale(1.04);
+      border-color: var(--pink-dark);
+      box-shadow: 0 14px 28px rgba(216, 27, 96, 0.28);
+    }
+    .gift-card .box-num-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: #ffe0ec;
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 3px 9px;
+      border-radius: 99px;
+    }
+    .gift-card .rarity-dot {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+    .rarity-SSR { background: linear-gradient(135deg, #ffd54f, #ffb300); color: #5d4037; }
+    .rarity-SR { background: linear-gradient(135deg, #e1bee7, #ba68c8); color: #fff; }
+    .rarity-R { background: #ffd6e7; color: #ad1457; }
+
+    .gift-card .card-visual {
+      font-size: 3.1rem;
+      margin: 14px 0 8px;
+      display: inline-block;
+      filter: drop-shadow(0 4px 8px rgba(255,77,141,0.25));
+    }
+    .gift-card:hover:not(.opened) .card-visual {
+      animation: shakeBox 0.6s infinite;
+    }
+    @keyframes shakeBox {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(-10deg) scale(1.1); }
+      75% { transform: rotate(10deg) scale(1.1); }
+    }
+    .gift-card .card-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--pink-dark);
+      line-height: 1.3;
+    }
+    .gift-card .card-sub {
+      font-size: 0.8rem;
+      color: #8c4a63;
+      margin-top: 5px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .gift-card.opened {
+      background: linear-gradient(180deg, #fff9fb 0%, #f3e5ec 100%);
+      border-color: #e1bee7;
+      cursor: default;
+    }
+    .gift-card.opened.tier-SSR {
+      border-color: #ffb300;
+      background: linear-gradient(180deg, #fffdf5 0%, #fff3cd 100%);
+      box-shadow: 0 0 18px rgba(255, 179, 0, 0.35);
+    }
+
+    /* TAB 2: SLOT MACHINE / WHEEL */
+    .slot-stage {
+      background: rgba(255,255,255,0.95);
+      border: 3px solid #ffb3d1;
+      border-radius: 32px;
+      padding: 36px 28px;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(216, 27, 96, 0.2);
+    }
+    .slot-window {
+      background: linear-gradient(135deg, #2b091c 0%, #4a0e2e 100%);
+      color: #fff;
+      border: 5px solid #ffb300;
+      border-radius: 26px;
+      padding: 38px 24px;
+      margin: 24px 0;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.6), 0 10px 25px rgba(255, 179, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .slot-icon {
+      font-size: 4.8rem;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 16px rgba(255,255,255,0.5));
+    }
+    .slot-name {
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: #ffeb3b;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .slot-meta {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #ffc1e3;
+      font-weight: 700;
+    }
+
+    /* TAB 3: TV FINALE / WALL OF FAME (FOR VIDEO RECORDING) */
+    .finale-stage {
+      border-radius: 30px;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(45, 8, 28, 0.94), rgba(25, 4, 18, 0.96));
+      border: 3px solid #ff80ab;
+      color: #fff;
+      box-shadow: 0 0 50px rgba(255, 77, 141, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+    .finale-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .finale-header h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: #ffeb3b;
+      text-shadow: 0 0 20px rgba(255, 235, 59, 0.6);
+      font-weight: 400;
+    }
+    .finale-header p {
+      color: #ffc1e3;
+      font-size: 1.1rem;
+      margin-top: 6px;
+      font-weight: 700;
+    }
+    .finale-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    /* Auto-scroll viewport for video recording */
+    .credits-viewport {
+      max-height: 62vh;
+      overflow-y: auto;
+      padding: 10px;
+      scroll-behavior: smooth;
+    }
+    .credits-viewport::-webkit-scrollbar { width: 8px; }
+    .credits-viewport::-webkit-scrollbar-thumb { background: #ff4d8d; border-radius: 99px; }
+
+    .fame-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .fame-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+      border: 2px solid rgba(255, 179, 209, 0.4);
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s;
+    }
+    .fame-card.fame-SSR {
+      border-color: #ffd54f;
+      background: linear-gradient(135deg, rgba(255, 213, 79, 0.22), rgba(255, 143, 0, 0.08));
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.28);
+    }
+    .fame-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+    .fame-info {
+      overflow: hidden;
+    }
+    .fame-winner {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .fame-gift {
+      font-size: 0.92rem;
+      color: #ffeb3b;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+    .fame-meta {
+      font-size: 0.76rem;
+      color: #f8bbd0;
+      margin-top: 3px;
+    }
+
+    /* TAB 4: INVENTORY & ROSTER */
+    .panel-box {
+      background: rgba(255,255,255,0.95);
+      border: 2px solid #ffb3d1;
+      border-radius: 24px;
+      padding: 24px;
+      color: var(--text);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #ffd6e7;
+      text-align: left;
+    }
+    th { background: #ffe4ef; color: var(--pink-dark); font-weight: 800; }
+
+    /* WINNER POPUP MODAL (TV BIG SCREEN STYLE) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(35, 5, 22, 0.78);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 900;
+      padding: 20px;
+    }
+    .modal-backdrop.show { display: flex; }
+
+    .winner-modal {
+      background: linear-gradient(180deg, #ffffff 0%, #fff0f6 100%);
+      border: 4px solid #ff4d8d;
+      border-radius: 34px;
+      max-width: 580px;
+      width: 100%;
+      padding: 34px 28px;
+      text-align: center;
+      color: var(--text);
+      box-shadow: 0 20px 60px rgba(255, 77, 141, 0.55);
+      animation: zoomIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+    }
+    .winner-modal.modal-SSR {
+      border-color: #ffb300;
+      background: linear-gradient(180deg, #fffef7 0%, #fff3cd 100%);
+      box-shadow: 0 0 70px rgba(255, 193, 7, 0.75);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.75); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-rarity-banner {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 99px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    .modal-big-icon {
+      font-size: 5.5rem;
+      margin: 6px 0;
+      display: inline-block;
+      animation: bounce 1.2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .modal-winner-name {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.1rem;
+      color: var(--pink-dark);
+      margin-bottom: 10px;
+    }
+    .modal-gift-box {
+      background: #fff;
+      border: 3px dashed #ff4d8d;
+      border-radius: 22px;
+      padding: 18px;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #c2185b;
+      margin: 12px 0 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+    }
+    .modal-wish-text {
+      font-size: 1rem;
+      color: #6d2c46;
+      font-style: italic;
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <canvas id="fx-canvas"></canvas>
+  <div id="petals-box"></div>
+
+  <div class="app-wrap">
+    <!-- HEADER -->
+    <header class="tv-header">
+      <div class="brand-box">
+        <div class="brand-logo">🌸</div>
+        <div class="brand-title">
+          <h1>Đại Tiệc Quà Tặng 20/10 - D18TH2</h1>
+          <p>Sân khấu bốc thăm may mắn &amp; Vinh danh 47 bông hoa xinh đẹp lớp D18TH2 - Đại học Hoa Lư</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="stat-pill">👩‍🎓 Nữ sinh: <span id="st-girls-remain">47</span>/47</div>
+        <div class="stat-pill">🎁 Tổng hộp: <span id="st-total">48</span></div>
+        <div class="stat-pill">✨ Chưa mở: <span id="st-remain">48</span></div>
+        <div class="stat-pill">💖 Đã trao: <span id="st-opened">0</span></div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <div class="nav-bar">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('boxes')">🎀 1. Đập Hộp Mù (48 Hộp)</button>
+        <button class="tab-btn" onclick="switchTab('slot')">🎡 2. Máy Quay Nhân Phẩm</button>
+        <button class="tab-btn" onclick="switchTab('finale')">🎬 3. Vinh Danh Cuối Giờ (Quay Video)</button>
+        <button class="tab-btn" onclick="switchTab('manage')">📋 4. Kho Quà &amp; Danh Sách D18TH2</button>
+      </div>
+      <div class="tv-tools">
+        <button class="tool-btn" id="btn-bgm" onclick="toggleMusic()">🎵 Nhạc Nền: Tắt</button>
+        <button class="tool-btn" onclick="fireCelebration()">🎆 Bắn Pháo Hoa</button>
+        <button class="tool-btn" onclick="toggleFullScreen()">📺 Toàn Màn Hình TV</button>
+      </div>
+    </div>
+
+    <!-- PLAYER INPUT BAR -->
+    <div class="control-bar" id="player-control-bar">
+      <div class="input-group">
+        <input type="text" id="player-input" placeholder="🌷 Nhập/chọn tên bạn nữ (Để trống sẽ tự bốc ngẫu nhiên bạn chưa nhận)...">
+        <select id="roster-select" onchange="selectFromRoster(this.value)">
+          <option value="">-- Chọn nhanh từ 47 bạn nữ D18TH2 --</option>
+        </select>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn-secondary" onclick="pickRandomStudent()" title="Gọi ngẫu nhiên 1 bạn nữ chưa nhận quà lên sân khấu">👩‍🎓 Bốc Tên Bạn Nữ</button>
+        <button class="btn-primary" onclick="openRandomBox()">🎲 Bốc Hộp Ngẫu Nhiên</button>
+        <button class="tool-btn" onclick="shuffleRemaining()">🔀 Trộn Lại Hộp</button>
+      </div>
+    </div>
+
+    <!-- TAB 1: 48 BLIND BOXES -->
+    <section id="tab-boxes">
+      <div class="box-grid" id="box-grid"></div>
+    </section>
+
+    <!-- TAB 2: SLOT MACHINE -->
+    <section id="tab-slot" class="hidden">
+      <div class="slot-stage">
+        <h2 style="color: var(--pink-dark); font-size: 1.8rem;">🎡 Vòng Quay Nhân Phẩm 20/10 - D18TH2</h2>
+        <p style="color: #8c3b5a; font-weight: 700; margin-top: 4px;">Hồi hộp săn các phần quà LIMITED (chỉ có 1 phiếu duy nhất trong lớp!)</p>
+        <div class="slot-window">
+          <div class="slot-icon" id="slot-icon">🎁</div>
+          <div class="slot-name" id="slot-name">Sẵn sàng quay thưởng!</div>
+          <div class="slot-meta" id="slot-meta">Chọn bạn nữ phía trên (hoặc để trống hệ thống tự gọi tên) rồi nhấn nút Quay</div>
+        </div>
+        <button class="btn-primary" id="btn-spin-slot" onclick="spinSlotMachine()" style="font-size: 1.25rem; padding: 16px 42px;">
+          🌸 QUAY THƯỞNG NGAY 🌸
+        </button>
+      </div>
+    </section>
+
+    <!-- TAB 3: TV FINALE SHOWCASE FOR VIDEO -->
+    <section id="tab-finale" class="hidden">
+      <div class="finale-stage">
+        <div class="finale-header">
+          <h2>👑 Bảng Vàng Vinh Danh 20/10 - Lớp D18TH2 👑</h2>
+          <p id="finale-subtitle">Tổng kết những chủ nhân xinh đẹp và các phần quà may mắn nhất hôm nay!</p>
+        </div>
+        <div class="finale-controls">
+          <button class="btn-primary" id="btn-autoscroll" onclick="toggleAutoScroll()">🎬 Tự Động Cuộn Phim (Quay Video)</button>
+          <button class="tool-btn" onclick="fireGrandFinale()">🎇 Bắn Pháo Hoa Liên Hoàn</button>
+          <button class="tool-btn" onclick="filterFinale('ALL')">Tất cả (48 Hộp)</button>
+          <button class="tool-btn" onclick="filterFinale('OPENED')">Chỉ hiện hộp đã nhận</button>
+          <button class="tool-btn" onclick="exportCSV()">📥 Tải File Excel Tổng Kết</button>
+        </div>
+        <div class="credits-viewport" id="credits-viewport">
+          <div class="fame-grid" id="fame-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MANAGE ROSTER & GIFT INVENTORY -->
+    <section id="tab-manage" class="hidden">
+      <div class="panel-box" style="margin-bottom: 20px;">
+        <h3 style="color: var(--pink-dark); margin-bottom: 8px;">👩‍🎓 Danh sách chuẩn 47 bạn nữ lớp D18TH2 (Mỗi tên 1 dòng)</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 10px;">Danh sách dưới đây đã được trích xuất và lọc tự động 47 bạn nữ từ file lớp D18TH2:</p>
+        <textarea id="roster-textarea" rows="8" style="width:100%; padding:12px; border-radius:12px; border:2px solid #ffb3d1; font-family:inherit; font-weight:600;"></textarea>
+        <div style="margin-top: 10px; display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn-primary" onclick="saveRoster()">💾 Lưu Chỉnh Sửa Danh Sách</button>
+          <button class="tool-btn" onclick="restoreDefaultRoster()">👩‍🎓 Khôi Phục Chuẩn 47 Bạn Nữ D18TH2</button>
+          <button class="tool-btn" onclick="resetAllData()">🔄 Làm Mới Lại Toàn Bộ 48 Hộp Quà</button>
+        </div>
+      </div>
+
+      <div class="panel-box">
+        <h3 style="color: var(--pink-dark);">📋 Chi Tiết 48 Phiếu Quà Theo Danh Sách</h3>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Hộp Số</th>
+                <th>Tên Phần Quà</th>
+                <th>Độ Hiếm</th>
+                <th>Trạng Thái</th>
+                <th>Bạn Nữ Nhận Quà</th>
+                <th>Thời Gian</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WINNER MODAL -->
+  <div class="modal-backdrop" id="winner-modal-backdrop" onclick="closeWinnerModal()">
+    <div class="winner-modal" id="winner-modal-card" onclick="event.stopPropagation()">
+      <div class="modal-rarity-banner" id="m-rarity">✨ QUÀ ĐẶC BIỆT</div>
+      <div><span class="modal-big-icon" id="m-icon">🎁</span></div>
+      <div class="modal-winner-name" id="m-winner">Chúc mừng bạn!</div>
+      <div class="modal-gift-box" id="m-gift">Tên món quà</div>
+      <p class="modal-wish-text" id="m-wish">Lời chúc 20/10</p>
+      <button class="btn-primary" onclick="closeWinnerModal()">💖 Nhận Quà &amp; Chụp Ảnh Thôi!</button>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. DANH SÁCH 47 BẠN NỮ LỚP D18TH2 (ĐÃ LỌC BỎ 5 BẠN NAM TỪ FILE EXCEL)
+    // =========================================================================
+    const DEFAULT_ROSTER = [
+      "Lại Thị Lan Anh",
+      "Nguyễn Hà Anh",
+      "Nguyễn Thị Lan Anh",
+      "Phạm Thị Duyên Anh",
+      "Phạm Bùi Minh Ánh",
+      "Dương Thị Bảo Chi",
+      "Nguyễn Việt Chinh",
+      "Bùi Thị Diễm",
+      "Bùi Thị Hương Giang",
+      "Vũ Nguyễn Thu Hà",
+      "Điền Thị Thu Hương",
+      "Đinh Thị Lan Hương",
+      "Nguyễn Quỳnh Hương",
+      "Phạm Tố Hương",
+      "Nguyễn Ngọc Huyền",
+      "Đinh Thị Yến Lệ",
+      "Đinh Ngọc Linh",
+      "Nguyễn Thị Ngọc Linh",
+      "Quàng Thị By Linh",
+      "Dương Thị Lụa",
+      "Lê Thị Khánh Ly",
+      "Mai Khánh Ly",
+      "Trần Thị Cẩm Ly",
+      "Vũ Thị Hải Ly",
+      "Bùi Vũ Phương Mai",
+      "Nguyễn Thị Phương Mai",
+      "Nguyễn Trà My",
+      "Dương Thu Nga",
+      "Trần Thúy Ngân",
+      "Đinh Thị Bảo Ngọc",
+      "Phạm Minh Ngọc",
+      "Thào Thị Nhà",
+      "Vũ Thị Thanh Nhàn",
+      "Lê Thị Yến Nhi",
+      "Trịnh Yến Nhi",
+      "Hà Hồng Nhung",
+      "Nguyễn Trang Nhung",
+      "Chu Thị Kim Oanh",
+      "Nguyễn Thị Thu Phương",
+      "Nguyễn Hồng Quyên",
+      "Kim Thị Thu Thảo",
+      "Phan Thị Thảo",
+      "Nguyễn Thị Thoa",
+      "Nguyễn Thị Thu",
+      "Phạm Hoài Thương",
+      "Ninh Thị Mai Trang",
+      "Phạm Huyền Trang"
+    ];
+
+    // =========================================================================
+    // 2. DANH MỤC 22 LOẠI QUÀ = 48 PHIẾU
+    // =========================================================================
+    const GIFT_CATALOG = [
+      { name: "Bánh mì Sandwich", count: 4, icon: "🥪", tier: "R" },
+      { name: "Bim bim Milo", count: 3, icon: "🍫", tier: "SR" },
+      { name: "Bim bim Oishi", count: 2, icon: "🍘", tier: "SR" },
+      { name: "Combo 3 Kẹo mút Alpenliebe", count: 3, icon: "🍭", tier: "SR" },
+      { name: "Bim bim Poca", count: 1, icon: "🥔", tier: "SSR" },
+      { name: "Bim bim Lays", count: 3, icon: "🍟", tier: "SR" },
+      { name: "Mì tôm Hảo Hảo + Kem dâu", count: 1, icon: "🍦", tier: "SSR" },
+      { name: "Mì tôm Hảo Hảo + Chúc chích", count: 1, icon: "🍜", tier: "SSR" },
+      { name: "Kẹo dẻo mini", count: 8, icon: "🍇", tier: "R" },
+      { name: "Combo 2 Xúc xích", count: 2, icon: "🌭", tier: "SR" },
+      { name: "Snack mì Enaak", count: 1, icon: "🐥", tier: "SSR" },
+      { name: "Cá viên chiên + Kẹo mút Alpenliebe", count: 3, icon: "🍢", tier: "SR" },
+      { name: "Kẹo ngậm trái cây", count: 4, icon: "🍊", tier: "R" },
+      { name: "Combo 2 Cánh gà chiên", count: 1, icon: "🍗", tier: "SSR" },
+      { name: "Kẹo dẻo Big Size", count: 1, icon: "🌈", tier: "SSR" },
+      { name: "Bánh tráng trộn/lắc", count: 2, icon: "🥭", tier: "SR" },
+      { name: "Kẹo thỏi Mentos", count: 2, icon: "🍬", tier: "SR" },
+      { name: "Combo 2 Hạt mix", count: 1, icon: "🥜", tier: "SSR" },
+      { name: "Bàn chải đánh răng xịn", count: 1, icon: "🪥", tier: "SSR" },
+      { name: "Lược gấu nâu dễ thương", count: 1, icon: "🧸", tier: "SSR" },
+      { name: "Dây buộc tóc gấu xinh xắn", count: 2, icon: "🎀", tier: "SR" },
+      { name: "Combo 2 Dây buộc tóc Hello Kitty", count: 1, icon: "🐱", tier: "SSR" }
+    ];
+
+    const WISHES = [
+      "Chúc bông hoa xinh đẹp lớp D18TH2 ngày 20/10 luôn rạng rỡ, tự tin, học giỏi và ngập tràn niềm vui! 🌸",
+      "Chúc bạn 20/10 nhận được thật nhiều yêu thương, luôn cười tươi và đạt điểm A+ mọi học phần nhé! 💖",
+      "20/10 chúc cô giáo tiểu học tương lai của lớp D18TH2 luôn xinh đẹp tuyệt vời và hạnh phúc mỗi ngày! ✨",
+      "Gửi ngàn lời chúc ngọt ngào nhất tới bạn nhân ngày Phụ nữ Việt Nam 20/10! Mãi tỏa sáng rực rỡ nhé! 🌷"
+    ];
+
+    const STORAGE_KEY = "gameshow_20_10_d18th2_boxes";
+    const ROSTER_KEY = "gameshow_20_10_d18th2_roster";
+    let boxes = [];
+    let roster = [];
+    let finaleFilter = "ALL";
+    let autoScrollTimer = null;
+
+    function buildInitialPool() {
+      const pool = [];
+      let idCounter = 1;
+      GIFT_CATALOG.forEach(item => {
+        for (let i = 0; i < item.count; i++) {
+          pool.push({
+            giftId: idCounter++,
+            name: item.name,
+            icon: item.icon,
+            tier: item.tier
+          });
+        }
+      });
+      return pool;
+    }
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function initApp() {
+      // Khởi tạo danh sách 47 bạn nữ D18TH2 (ưu tiên nạp DEFAULT_ROSTER nếu bộ nhớ trống)
+      const savedRoster = localStorage.getItem(ROSTER_KEY);
+      if (savedRoster) {
+        try {
+          const parsedRoster = JSON.parse(savedRoster);
+          if (Array.isArray(parsedRoster) && parsedRoster.length > 0) {
+            roster = parsedRoster;
+          } else {
+            roster = [...DEFAULT_ROSTER];
+          }
+        } catch (e) {
+          roster = [...DEFAULT_ROSTER];
+        }
+      } else {
+        roster = [...DEFAULT_ROSTER];
+        localStorage.setItem(ROSTER_KEY, JSON.stringify(roster));
+      }
+      document.getElementById("roster-textarea").value = roster.join("\n");
+
+      // Khởi tạo 48 hộp quà
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length === 48) {
+            boxes = parsed;
+            renderAll();
+            return;
+          }
+        } catch (e) {}
+      }
+
+      const pool = shuffle(buildInitialPool());
+      boxes = pool.map((g, idx) => ({
+        boxNumber: idx + 1,
+        giftId: g.giftId,
+        name: g.name,
+        icon: g.icon,
+        tier: g.tier,
+        opened: false,
+        winner: "",
+        time: ""
+      }));
+      saveState();
+      renderAll();
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(boxes));
+    }
+
+    function tierLabel(tier) {
+      if (tier === "SSR") return "✨ LIMITED (1 Phiếu)";
+      if (tier === "SR") return "💖 Quà Hiếm";
+      return "🌸 Ngọt Ngào";
+    }
+
+    // Trả về danh sách các bạn nữ chưa nhận quà
+    function getUnclaimedStudents() {
+      const takenNames = new Set(boxes.filter(b => b.opened).map(b => b.winner));
+      return roster.filter(name => !takenNames.has(name));
+    }
+
+    function renderAll() {
+      const opened = boxes.filter(b => b.opened).length;
+      const unclaimedGirls = getUnclaimedStudents();
+
+      document.getElementById("st-girls-remain").textContent = unclaimedGirls.length;
+      document.getElementById("st-total").textContent = boxes.length;
+      document.getElementById("st-remain").textContent = boxes.length - opened;
+      document.getElementById("st-opened").textContent = opened;
+
+      // Render 48 Boxes
+      const grid = document.getElementById("box-grid");
+      grid.innerHTML = "";
+      boxes.forEach((b, idx) => {
+        const card = document.createElement("div");
+        card.className = `gift-card ${b.opened ? "opened tier-" + b.tier : ""}`;
+        card.onclick = () => { if (!b.opened) openBox(idx); };
+
+        if (!b.opened) {
+          card.innerHTML = `
+            <span class="box-num-badge">#${String(b.boxNumber).padStart(2, '0')}</span>
+            <span class="rarity-dot rarity-R">Túi Mù</span>
+            <div class="card-visual">🎁</div>
+            <div class="card-title">Hộp Quà #${String(b.boxNumber).padStart(2, '0')}</div>
+            <div class="card-sub">Chạm để khui quà ✨</div>
+          `;
+        } else {
+          card.innerHTML = `
+            <span class="box-num-badge">#${String(b.boxNumber).padStart(2, '0')}</span>
+            <span class="rarity-dot rarity-${b.tier}">${b.tier}</span>
+            <div class="card-visual">${b.icon}</div>
+            <div class="card-title">${b.name}</div>
+            <div class="card-sub">🌷 ${b.winner}</div>
+          `;
+        }
+        grid.appendChild(card);
+      });
+
+      // Render Finale Wall of Fame
+      const fameGrid = document.getElementById("fame-grid");
+      fameGrid.innerHTML = "";
+      const listForFinale = finaleFilter === "OPENED" ? boxes.filter(b => b.opened) : boxes;
+      listForFinale.forEach(b => {
+        const div = document.createElement("div");
+        div.className = `fame-card ${b.opened && b.tier === "SSR" ? "fame-SSR" : ""}`;
+        div.innerHTML = `
+          <div class="fame-avatar">${b.opened ? b.icon : "🎁"}</div>
+          <div class="fame-info">
+            <div class="fame-winner">${b.opened ? b.winner : ("Hộp #" + String(b.boxNumber).padStart(2, '0') + " (Chưa mở)")}</div>
+            <div class="fame-gift">${b.opened ? b.name : "Đang chờ chủ nhân..."}</div>
+            <div class="fame-meta">Hộp #${String(b.boxNumber).padStart(2, '0')} • ${b.opened ? (tierLabel(b.tier) + " • " + b.time) : "Bí mật"}</div>
+          </div>
+        `;
+        fameGrid.appendChild(div);
+      });
+
+      // Render Inventory Table
+      const tbody = document.getElementById("inventory-tbody");
+      tbody.innerHTML = "";
+      boxes.forEach(b => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><strong>Hộp #${String(b.boxNumber).padStart(2, '0')}</strong></td>
+          <td>${b.icon} ${b.name}</td>
+          <td><span class="rarity-dot rarity-${b.tier}">${tierLabel(b.tier)}</span></td>
+          <td>${b.opened ? "✅ Đã trao" : "⏳ Chưa mở"}</td>
+          <td><strong>${b.winner || "—"}</strong></td>
+          <td>${b.time || "—"}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      updateRosterSelect();
+    }
+
+    // Bốc ngẫu nhiên 1 bạn nữ chưa có quà đưa lên ô Input
+    function pickRandomStudent() {
+      const unclaimed = getUnclaimedStudents();
+      if (unclaimed.length === 0) {
+        alert("🎉 Cả 47 bạn nữ lớp D18TH2 đều đã nhận được quà! Hộp còn lại là Quà Bonus của lớp!");
+        document.getElementById("player-input").value = "Quà Bonus Tập Thể D18TH2";
+        return;
+      }
+      const luckyGirl = unclaimed[Math.floor(Math.random() * unclaimed.length)];
+      document.getElementById("player-input").value = luckyGirl;
+      document.getElementById("roster-select").value = luckyGirl;
+      playSoundEffect("tick");
+    }
+
+    // Lấy tên bạn nữ hiện tại (nếu để trống sẽ tự động bốc ngẫu nhiên 1 bạn nữ chưa nhận quà)
+    function getCurrentPlayerName(boxNumber) {
+      const inp = document.getElementById("player-input");
+      let name = inp.value.trim();
+      const takenNames = new Set(boxes.filter(b => b.opened).map(b => b.winner));
+
+      // Kiểm tra nếu tên nhập vào đã nhận quà rồi thì hỏi xác nhận tránh trùng lặp nhầm
+      if (name && takenNames.has(name)) {
+        const ok = confirm(`⚠️ Bạn "${name}" đã nhận 1 phần quà trước đó rồi!\nBạn có chắc chắn muốn trao thêm hộp quà này cho "${name}" không?`);
+        if (!ok) return null;
+      }
+
+      // Nếu không nhập tên -> Tự động chọn ngẫu nhiên 1 bạn nữ chưa nhận quà trong 47 bạn
+      if (!name) {
+        const unclaimed = getUnclaimedStudents();
+        if (unclaimed.length > 0) {
+          name = unclaimed[Math.floor(Math.random() * unclaimed.length)];
+        } else {
+          name = `Quà Bonus Lớp D18TH2 (Hộp #${String(boxNumber).padStart(2, '0')})`;
+        }
+      }
+      return name;
+    }
+
+    function openBox(index) {
+      const b = boxes[index];
+      if (!b || b.opened) return;
+
+      const winnerName = getCurrentPlayerName(b.boxNumber);
+      if (winnerName === null) return; // Người dùng hủy thao tác do trùng tên
+
+      const now = new Date();
+      b.opened = true;
+      b.winner = winnerName;
+      b.time = now.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
+
+      document.getElementById("player-input").value = "";
+      document.getElementById("roster-select").value = "";
+
+      saveState();
+      renderAll();
+      playSoundEffect(b.tier === "SSR" ? "jackpot" : "win");
+      fireCelebration(b.tier === "SSR" ? 130 : 75);
+      showWinnerModal(b);
+    }
+
+    function showWinnerModal(b) {
+      const card = document.getElementById("winner-modal-card");
+      card.className = "winner-modal " + (b.tier === "SSR" ? "modal-SSR" : "");
+
+      const banner = document.getElementById("m-rarity");
+      banner.className = "modal-rarity-banner rarity-" + b.tier;
+      banner.textContent = `${tierLabel(b.tier)} • HỘP SỐ #${String(b.boxNumber).padStart(2, '0')}`;
+
+      document.getElementById("m-icon").textContent = b.icon;
+      document.getElementById("m-winner").textContent = `🌷 ${b.winner}`;
+      document.getElementById("m-gift").textContent = `${b.icon} ${b.name}`;
+      document.getElementById("m-wish").textContent = WISHES[Math.floor(Math.random() * WISHES.length)];
+
+      document.getElementById("winner-modal-backdrop").classList.add("show");
+    }
+
+    function closeWinnerModal() {
+      document.getElementById("winner-modal-backdrop").classList.remove("show");
+    }
+
+    function openRandomBox() {
+      const avail = boxes.map((b, i) => ({ b, i })).filter(x => !x.b.opened);
+      if (!avail.length) return alert("🎉 Cả 48 hộp quà đều đã có chủ nhân!");
+      const pick = avail[Math.floor(Math.random() * avail.length)];
+      openBox(pick.i);
+    }
+
+    // Slot Machine
+    let spinning = false;
+    function spinSlotMachine() {
+      if (spinning) return;
+      const avail = boxes.map((b, i) => ({ b, i })).filter(x => !x.b.opened);
+      if (!avail.length) return alert("🎉 Tất cả 48 phần quà đã được trao hết!");
+
+      // Nếu chưa chọn tên bạn nữ thì tự động bốc 1 bạn nữ chưa nhận quà trước khi quay
+      const inp = document.getElementById("player-input");
+      if (!inp.value.trim()) {
+        const unclaimed = getUnclaimedStudents();
+        if (unclaimed.length > 0) {
+          const autoGirl = unclaimed[Math.floor(Math.random() * unclaimed.length)];
+          inp.value = autoGirl;
+          document.getElementById("roster-select").value = autoGirl;
+        }
+      }
+
+      spinning = true;
+      const btn = document.getElementById("btn-spin-slot");
+      btn.disabled = true;
+
+      const iconEl = document.getElementById("slot-icon");
+      const nameEl = document.getElementById("slot-name");
+      const metaEl = document.getElementById("slot-meta");
+
+      let step = 0;
+      const totalSteps = 26;
+      const timer = setInterval(() => {
+        const rand = avail[Math.floor(Math.random() * avail.length)].b;
+        iconEl.textContent = rand.icon;
+        nameEl.textContent = rand.name;
+        metaEl.textContent = `Hộp #${String(rand.boxNumber).padStart(2, '0')} • ${tierLabel(rand.tier)}`;
+        playSoundEffect("tick");
+        step++;
+
+        if (step >= totalSteps) {
+          clearInterval(timer);
+          const finalPick = avail[Math.floor(Math.random() * avail.length)];
+          iconEl.textContent = finalPick.b.icon;
+          nameEl.textContent = finalPick.b.name;
+          metaEl.textContent = `TRÚNG HỘP #${String(finalPick.b.boxNumber).padStart(2, '0')}!`;
+          spinning = false;
+          btn.disabled = false;
+          openBox(finalPick.i);
+        }
+      }, 80);
+    }
+
+    function shuffleRemaining() {
+      const unopened = boxes.filter(b => !b.opened).map(b => ({
+        giftId: b.giftId, name: b.name, icon: b.icon, tier: b.tier
+      }));
+      if (unopened.length <= 1) return alert("Không còn đủ hộp chưa mở để trộn!");
+      const mixed = shuffle(unopened);
+      let k = 0;
+      boxes.forEach(b => {
+        if (!b.opened) {
+          b.giftId = mixed[k].giftId;
+          b.name = mixed[k].name;
+          b.icon = mixed[k].icon;
+          b.tier = mixed[k].tier;
+          k++;
+        }
+      });
+      saveState();
+      renderAll();
+      fireCelebration(40);
+    }
+
+    // Roster management
+    function saveRoster() {
+      const raw = document.getElementById("roster-textarea").value;
+      roster = raw.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+      localStorage.setItem(ROSTER_KEY, JSON.stringify(roster));
+      renderAll();
+      alert(`✅ Đã lưu danh sách ${roster.length} bạn nữ!`);
+    }
+
+    function restoreDefaultRoster() {
+      if (!confirm("Khôi phục lại danh sách chuẩn 47 bạn nữ lớp D18TH2?")) return;
+      roster = [...DEFAULT_ROSTER];
+      localStorage.setItem(ROSTER_KEY, JSON.stringify(roster));
+      document.getElementById("roster-textarea").value = roster.join("\n");
+      renderAll();
+      alert("✅ Đã khôi phục danh sách chuẩn 47 bạn nữ lớp D18TH2!");
+    }
+
+    function updateRosterSelect() {
+      const sel = document.getElementById("roster-select");
+      const takenNames = new Set(boxes.filter(b => b.opened).map(b => b.winner));
+      const unclaimedCount = roster.filter(name => !takenNames.has(name)).length;
+
+      sel.innerHTML = `<option value="">-- Chọn bạn nữ D18TH2 (Còn ${unclaimedCount}/${roster.length} bạn chưa nhận) --</option>`;
+      roster.forEach((name, idx) => {
+        const opt = document.createElement("option");
+        opt.value = name;
+        const stt = String(idx + 1).padStart(2, '0');
+        if (takenNames.has(name)) {
+          opt.textContent = `✅ [${stt}] ${name} (Đã nhận quà)`;
+        } else {
+          opt.textContent = `🌷 [${stt}] ${name}`;
+        }
+        sel.appendChild(opt);
+      });
+    }
+
+    function selectFromRoster(val) {
+      if (val) document.getElementById("player-input").value = val;
+    }
+
+    function resetAllData() {
+      if (!confirm("Bạn muốn làm mới lại toàn bộ 48 hộp quà từ đầu?")) return;
+      localStorage.removeItem(STORAGE_KEY);
+      initApp();
+    }
+
+    // Tabs & Finale Video Mode
+    function switchTab(tab) {
+      document.getElementById("tab-boxes").classList.toggle("hidden", tab !== "boxes");
+      document.getElementById("tab-slot").classList.toggle("hidden", tab !== "slot");
+      document.getElementById("tab-finale").classList.toggle("hidden", tab !== "finale");
+      document.getElementById("tab-manage").classList.toggle("hidden", tab !== "manage");
+      document.getElementById("player-control-bar").classList.toggle("hidden", tab === "finale" || tab === "manage");
+
+      document.body.classList.toggle("cinema-mode", tab === "finale");
+      const btns = document.querySelectorAll(".tab-btn");
+      btns[0].classList.toggle("active", tab === "boxes");
+      btns[1].classList.toggle("active", tab === "slot");
+      btns[2].classList.toggle("active", tab === "finale");
+      btns[3].classList.toggle("active", tab === "manage");
+
+      if (tab === "finale") {
+        fireGrandFinale();
+      } else if (autoScrollTimer) {
+        toggleAutoScroll();
+      }
+    }
+
+    function filterFinale(mode) {
+      finaleFilter = mode;
+      renderAll();
+    }
+
+    function toggleAutoScroll() {
+      const vp = document.getElementById("credits-viewport");
+      const btn = document.getElementById("btn-autoscroll");
+      if (autoScrollTimer) {
+        clearInterval(autoScrollTimer);
+        autoScrollTimer = null;
+        btn.textContent = "🎬 Tự Động Cuộn Phim (Quay Video)";
+        return;
+      }
+      btn.textContent = "⏸ Dừng Cuộn Phim";
+      autoScrollTimer = setInterval(() => {
+        if (vp.scrollTop + vp.clientHeight >= vp.scrollHeight - 2) {
+          vp.scrollTop = 0;
+        } else {
+          vp.scrollTop += 1.5;
+        }
+      }, 30);
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    function exportCSV() {
+      let csv = "\uFEFFHộp Số,Tên Phần Quà,Độ Hiếm,Trạng Thái,Bạn Nữ Nhận,Thời Gian\n";
+      boxes.forEach(b => {
+        csv += `Hộp #${String(b.boxNumber).padStart(2, '0')},"${b.name}","${tierLabel(b.tier)}",${b.opened ? "Đã nhận" : "Chưa mở"},"${b.winner || ""}",${b.time || ""}\n`;
+      });
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Tong_Ket_Qua_20_10_D18TH2.csv";
+      a.click();
+    }
+
+    // Web Audio API Sound Effects & Romantic BGM
+    let audioCtx = null;
+    let bgmInterval = null;
+    function getAudioCtx() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      return audioCtx;
+    }
+
+    function playSoundEffect(type) {
+      try {
+        const ctx = getAudioCtx();
+        const now = ctx.currentTime;
+        if (type === "tick") {
+          const osc = ctx.createOscillator();
+          const g = ctx.createGain();
+          osc.frequency.setValueAtTime(600, now);
+          g.gain.setValueAtTime(0.06, now);
+          g.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+          osc.connect(g); g.connect(ctx.destination);
+          osc.start(now); osc.stop(now + 0.05);
+        } else if (type === "jackpot") {
+          const notes = [523.25, 659.25, 783.99, 1046.5, 1318.5, 1567.98];
+          notes.forEach((f, i) => {
+            const osc = ctx.createOscillator();
+            const g = ctx.createGain();
+            osc.type = "triangle";
+            osc.frequency.setValueAtTime(f, now + i * 0.09);
+            g.gain.setValueAtTime(0.18, now + i * 0.09);
+            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.4);
+            osc.connect(g); g.connect(ctx.destination);
+            osc.start(now + i * 0.09); osc.stop(now + i * 0.09 + 0.4);
+          });
+        } else {
+          const notes = [523.25, 659.25, 783.99, 1046.5];
+          notes.forEach((f, i) => {
+            const osc = ctx.createOscillator();
+            const g = ctx.createGain();
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(f, now + i * 0.1);
+            g.gain.setValueAtTime(0.14, now + i * 0.1);
+            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.32);
+            osc.connect(g); g.connect(ctx.destination);
+            osc.start(now + i * 0.1); osc.stop(now + i * 0.1 + 0.32);
+          });
+        }
+      } catch (e) {}
+    }
+
+    function toggleMusic() {
+      const btn = document.getElementById("btn-bgm");
+      if (bgmInterval) {
+        clearInterval(bgmInterval);
+        bgmInterval = null;
+        btn.textContent = "🎵 Nhạc Nền: Tắt";
+        return;
+      }
+      btn.textContent = "🎵 Nhạc Nền: Đang Phát";
+      const melody = [523.25, 659.25, 783.99, 659.25, 880, 783.99, 659.25, 587.33];
+      let step = 0;
+      bgmInterval = setInterval(() => {
+        try {
+          const ctx = getAudioCtx();
+          const now = ctx.currentTime;
+          const osc = ctx.createOscillator();
+          const g = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(melody[step % melody.length], now);
+          g.gain.setValueAtTime(0.05, now);
+          g.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+          osc.connect(g); g.connect(ctx.destination);
+          osc.start(now); osc.stop(now + 0.45);
+          step++;
+        } catch (e) {}
+      }, 480);
+    }
+
+    // Canvas Confetti & Fireworks Engine
+    const canvas = document.getElementById("fx-canvas");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    function fireCelebration(count = 80) {
+      const colors = ["#ff4d8d", "#ffeb3b", "#ff80ab", "#00e5ff", "#ffd54f", "#e040fb"];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: window.innerWidth / 2 + (Math.random() - 0.5) * 300,
+          y: window.innerHeight * 0.45,
+          vx: (Math.random() - 0.5) * 16,
+          vy: (Math.random() - 0.8) * 16,
+          size: 6 + Math.random() * 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: 1,
+          rot: Math.random() * 360
+        });
+      }
+    }
+
+    function fireGrandFinale() {
+      for (let k = 0; k < 4; k++) {
+        setTimeout(() => fireCelebration(90), k * 350);
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, idx) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.32;
+        p.alpha -= 0.012;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.fillStyle = p.color;
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot += 4) * Math.PI / 180);
+        ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+        ctx.restore();
+        if (p.alpha <= 0) particles.splice(idx, 1);
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Floating Petals
+    function initPetals() {
+      const box = document.getElementById("petals-box");
+      const icons = ["🌸", "🌷", "💮", "✨", "💖"];
+      for (let i = 0; i < 20; i++) {
+        const s = document.createElement("span");
+        s.className = "petal";
+        s.textContent = icons[i % icons.length];
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.fontSize = (14 + Math.random() * 16) + "px";
+        s.style.animationDuration = (7 + Math.random() * 8) + "s";
+        s.style.animationDelay = (Math.random() * 5) + "s";
+        box.appendChild(s);
+      }
+    }
+
+    initPetals();
+    initApp();
+  </script>
+</body>
+</html>
